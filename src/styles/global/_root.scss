@@ -12,31 +12,31 @@
   --color-black: #000000;     /* Just pure black color */
   --color-white: #FFFFFF;     /* Just pure white color */
 
-  --color-dark: #141418;      /* Usually used for text color (or opposite) */
-  --color-light: #FFF7E9;     /* Usually used for background color (or opposite) */
-  --color-font: #A5A5B0;      /*Used for muted grey links in a footer */
+  --color-primary: #4B6BFB;   /* Accent color. Usually button's bg color */
 
-  --color-primary: #EBD034;   /* Accent color. Usually button's bg color */
-  --color-secondary: #FCCB0A; /* Secondary main color. Sometimes is absent */
+  --color-light: #FFFFFF;
+  --color-dark-900: #141624;
+  --color-dark-800: #181A2A;
+  --color-dark-600: #3B3C4A;
+  --color-dark-500: #696A75;
+  --color-dark-400: #97989F;
+  --color-dark-100: #E8E8EA;
 
-  --color-success: green;
-  --color-warning: yellow;
-  --color-error: red;
+  --color-success: var(--color-primary);
+  --color-warning: var(--color-primary);
+  --color-error: var(--color-primary);
 
 
   /*
    * Font Sizes
    */
-  --size-h1: clamp(3.375rem, 6vw, 4.5rem);   /* 54px → 72px */
-  --size-h2: clamp(2.5rem, 4.5vw, 3.375rem); /* 40px → 54px */
-  --size-h3: clamp(2.125rem, 3.5vw, 2.5rem); /* 34px → 40px */
-  --size-h4: clamp(1.375rem, 3vw, 2.125rem); /* 22px → 34px */
-  --size-h5: 1.375rem;                       /* 22px */
-  --size-h6: 1.125rem;                       /* 18px */
-
-  --size-md: 1rem;                           /* 16px */
-  --size-sm: 0.875rem;                       /* 14px */
-  --size-xs: 0.75rem;                        /* 12px */
+  --size-xxxl: 36px;
+  --size-xxl: 30px;
+  --size-xl: 24px;
+  --size-lg: 20px;
+  --size-md: 18px;                       
+  --size-sm: 16px;                       
+  --size-xs: 14px;                       
 
 
   /*
@@ -44,15 +44,6 @@
    */
   --font-primary: 'IBM Plex Sans', sans-serif;
   --font-secondary: 'IBM Plex Sans', sans-serif;
-
-
-  /*
-   * Font Weights
-   */
-  --font-extra-bold: 700;
-  --font-bold: 600;
-  --font-medium: 500;
-  --font-regular: 400;
 
 
   /*
@@ -67,19 +58,18 @@
   /*
    * Containers Width
    */
-  --container-sm: 980px;    /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
-  --container-md: 1200px;   /* The most common container width */
-  --container-lg: 1300px;   /* Can be used for wider Header or Footer */
+  --container-sm: 800px;    /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
+  --container-md: 1216px;   /* The most common container width */
+  --container-lg: 1216px;   /* Can be used for wider Header or Footer */
 
 
   /*
    * Border Radius
    */ 
-  --radius-xs: 8px; 
-  --radius-sm: 12px; 
-  --radius-md: 16px; 
-  --radius-lg: 24px; 
-  --radius-xl: 40px; 
+  --radius-sm: 6px; 
+  --radius-md: 12px; 
+  --radius-round: 50%; 
+  --radius-full: 99999px; 
 
 
   /*
@@ -91,20 +81,13 @@
   /*
    * Borders
    */
-  --stroke-base: 1px solid var(--color-black);
+  --stroke-base: 1px solid var(--color-dark-100);
   --stroke-transparent: 1px solid transparent;
 
 
   /*
    * Shadows
    */
-  --shadow-base: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-
-  /*
-   * =================================================
-   *  Contextual Tokens
-   * =================================================
-   */
+  --shadow-base: 0px 12px 24px 6px rgba(var(--color-dark), 0.12);
 
 }
