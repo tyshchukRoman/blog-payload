@@ -13,6 +13,7 @@
   --color-white: #FFFFFF;     /* Just pure white color */
 
   --color-primary: #4B6BFB;   /* Accent color. Usually button's bg color */
+  --color-secondary: #4B6BFB; /* Second Accent color. Sometimes is absent */
 
   --color-light: #FFFFFF;
   --color-dark-900: #141624;
@@ -30,29 +31,28 @@
   /*
    * Font Sizes
    */
-  --size-xxxl: 36px;
-  --size-xxl: 30px;
-  --size-xl: 24px;
-  --size-lg: 20px;
-  --size-md: 18px;                       
-  --size-sm: 16px;                       
-  --size-xs: 14px;                       
+  --size-xxxl: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
+  --size-xxl: clamp(1.25rem, 1.05rem + 1.8vw, 1.875rem);
+  --size-xl: clamp(1.125rem, 1rem + 1.5vw, 1.5rem);
+  --size-lg: clamp(1rem, 0.95rem + 1vw, 1.25rem);
+  --size-md: clamp(0.9375rem, 0.875rem + 0.8vw, 1.125rem);
+  --size-sm: clamp(0.875rem, 0.8125rem + 0.6vw, 1rem);
+  --size-xs: clamp(0.8125rem, 0.75rem + 0.4vw, 0.875rem);
 
 
   /*
    * Font Families
    */
-  --font-primary: 'IBM Plex Sans', sans-serif;
-  --font-secondary: 'IBM Plex Sans', sans-serif;
+  --font-primary: var(--font-work-sans);
+  --font-secondary: var(--font-source-serif-4);
 
 
   /*
    * Line Heights
    */
-  --leading-flat: 1;        /* very compact */
-  --leading-normal: 1.25;   /* default comfortable reading */
-  --leading-relaxed: 1.5;   /* more open, good for body text */
-  --leading-loose: 1.625;   /* airy, headings or large blocks */
+  --leading-flat: 1;       /* very compact */
+  --leading-normal: 1.2;   /* default comfortable reading */
+  --leading-relaxed: 1.5;  /* more open, good for body text */
 
 
   /*
@@ -88,6 +88,6 @@
   /*
    * Shadows
    */
-  --shadow-base: 0px 12px 24px 6px rgba(var(--color-dark), 0.12);
+  --shadow-base: 0px 12px 24px 6px rgba(17, 24, 39, 0.12);
 
 }

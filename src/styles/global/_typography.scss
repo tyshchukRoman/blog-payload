@@ -3,9 +3,9 @@
  */
 
 @mixin heading {
-  line-height: var(--leading-flat);
+  line-height: var(--leading-normal);
   font-family: var(--font-primary);
-  font-weight: var(--font-bold);
+  font-weight: 600;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -14,27 +14,27 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: var(--size-h1);
+  font-size: var(--size-xxxl);
 } 
 
 h2, .h2 {
-  font-size: var(--size-h2);
+  font-size: var(--size-xxl);
 } 
 
 h3, .h3 {
-  font-size: var(--size-h3);
+  font-size: var(--size-xl);
 } 
 
 h4, .h4 {
-  font-size: var(--size-h4);
+  font-size: var(--size-lg);
 } 
 
 h5, .h5 {
-  font-size: var(--size-h5);
+  font-size: var(--size-md);
 } 
 
 h6, .h6 {
-  font-size: var(--size-h6);
+  font-size: var(--size-sm);
 } 
 
 ul, ol {
@@ -43,9 +43,13 @@ ul, ol {
   margin: 0;
 }
 
+small {
+  font-size: var(--size-xs);
+}
+
 a {
-  color: inherit;
   text-decoration: none;
+	color: inherit;
 }
 
 a:not(.button) {
@@ -53,18 +57,29 @@ a:not(.button) {
 }
 
 a:not(.button):hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
-.menu a {
-  text-decoration: none;
+ul:has([class]) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.menu a:hover {
-  text-decoration: underline;
+ul:not([class]) {
+  padding-inline-start: 1.7ch;
+  list-style-type: disc;
 }
 
-mark {
-  background-color: inherit;
-  color: inherit;
+ul:not([class]) > li {
+  padding-inline-start: 0.5rem;
+}
+
+ul ::marker {
+  font-size: 0.8lh;
+}
+
+ol ::marker {
+  font-size: 1em;
+  font-weight: var(--font-bold);
 }

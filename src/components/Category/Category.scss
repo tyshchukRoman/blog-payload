@@ -1,0 +1,14 @@
+.category {
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+
+  &.primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
+
+  &.secondary {
+    color: var(--color-primary);
+    background-color: rgba(var(--color-primary), 0.05);
+  }
+}

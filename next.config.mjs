@@ -12,6 +12,16 @@ const nextConfig = {
 
     return webpackConfig
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.shazoo.ru",
+        pathname: "/**",
+      },
+    ],
+  },
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
