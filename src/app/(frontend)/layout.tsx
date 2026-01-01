@@ -3,6 +3,7 @@ import React from 'react';
 import '@styles/main.scss';
 
 import Header from '@components/Header/Header.tsx';
+import Footer from '@components/Footer/Footer.tsx';
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${workSans.variable} ${sourceSerif.variable}`}>
       <body>
+        <Header />
         <main>{children}</main>
       </body>
     </html>

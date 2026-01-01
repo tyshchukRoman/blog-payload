@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import './Header.scss';
 
 const Header: React.FC = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -24,34 +26,33 @@ const Header: React.FC = () => {
 
   return (
     <header className="header">
-      <div className="header__container">
+      <div className="header__inner | container">
         <Link href="/" className="header__logo">
-          MySite
+          <Image
+            src="/images/logo.png"
+            alt="meta blog"
+            width={158}
+            height={36}
+            className="header__logo-image"
+          />
         </Link>
 
         <nav className="header__nav">
-          <Link href="/about">About</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/contact">Contact</Link>
+          <Link className="header__nav-link" href="/about">About</Link>
+          <Link className="header__nav-link" href="/blog">Blog</Link>
+          <Link className="header__nav-link" href="/contact">Contact</Link>
         </nav>
 
-        {/* Search */}
-        <form className="header__search" role="search">
-          <input
-            type="search"
-            placeholder="Search…"
-            aria-label="Search"
-          />
-        </form>
-
-        {/* Theme toggle */}
-        <button
-          className="header__theme-toggle"
-          onClick={toggleTheme}
-          aria-label="Toggle dark mode"
-        >
-          {theme === "light" ? "🌙" : "☀️"}
-        </button>
+        <div className="header__right">
+          {/* Search */}
+          <form className="header__search" role="search">
+            <input
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
       </div>
     </header>
   );

@@ -1,6 +1,8 @@
 @use "@/styles/global/breakpoints" as *;
 
 .hero-primary {
+  margin-top: 1.5rem;
+
   &__inner {
     width: 100%;
     min-height: 20rem;

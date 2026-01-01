@@ -4,9 +4,9 @@ import '@styles/main.scss'
 import './PostMeta.scss'
 
 type PostMetaProps = {
-  authorImage: string;
-  authorName: string;
   date: string;
+  authorName: string;
+  authorImage?: string;
   className?: string;
 };
 
@@ -20,7 +20,7 @@ export default function PostMeta({
     <div className={clsx("post-meta | cluster", className)}>
       <div className="post-meta__author | cluster">
         <Image
-          src={authorImage}
+          src={authorImage ? authorImage : '/images/avatar-placeholder.png'}
           alt={authorName}
           width={36}
           height={36}

@@ -2,23 +2,20 @@ import Image from "next/image";
 import "./HeroPrimary.scss";
 import '@styles/main.scss'
 
-import Category from '@components/Category/Category.tsx';
-import PostMeta from '@components/PostMeta/PostMeta.tsx';
+import Category from '@components/Category/Category';
+import PostMeta from '@components/PostMeta/PostMeta';
+import type { PostProps } from '@components/Post/Post';
 
-type HeroPrimaryProps = {
-  imageSrc: string;
-  category: string;
-  title: string;
-  author: string;
-  date: string;
-};
+type HeroPrimaryProps = PostProps;
 
 export default function HeroPrimary({
-  imageSrc,
-  category,
+  image = '/images/post-placeholder.jpg',
+  categories = [],
   title,
-  author,
   date,
+  authorName,
+  authorImage="/images/avatar-placeholder.png",
+  className
 }: HeroPrimaryProps) {
   return (
     <section className="hero-primary | section">
@@ -26,7 +23,7 @@ export default function HeroPrimary({
         <div className="hero-primary__inner">
           <div className="hero-primary__image-wrapper">
             <Image
-              src={imageSrc}
+              src={image}
               alt={title}
               fill
               priority
@@ -35,15 +32,21 @@ export default function HeroPrimary({
           </div>
 
           <div className="hero-primary__card | flow">
-            <Category variant="primary">{category}</Category>
-
-            <h1 className="">{title}</h1>
-
+            {categories.length > 0 && 
+              (
+                <div className="post__categories | cluster">
+                  {categories.map(category => (
+                    <Category key={category} variant="primary">{category}</Category>
+                  ))}
+                </div>
+              )
+            }
+            <h1 className="hero-primary__title">{title}</h1>
             <PostMeta
               className="hero-primary__meta-info"
-              authorImage="/images/avatar.jpg"
-              authorName="Jason Francisco"
-              date="August 20, 2022"
+              authorImage={authorImage}
+              authorName={authorName}
+              date={date}
             />
           </div>
         </div>
