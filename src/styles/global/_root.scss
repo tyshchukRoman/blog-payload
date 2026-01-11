@@ -1,0 +1,93 @@
+:root {
+
+  /*
+   * =================================================
+   *  Global Tokens
+   * =================================================
+   */
+
+  /*
+   * Colors
+   */
+  --color-black: #000000;     /* Just pure black color */
+  --color-white: #FFFFFF;     /* Just pure white color */
+
+  --color-primary: #4B6BFB;   /* Accent color. Usually button's bg color */
+  --color-secondary: #4B6BFB; /* Second Accent color. Sometimes is absent */
+
+  --color-light: #FFFFFF;
+  --color-dark-900: #141624;
+  --color-dark-800: #181A2A;
+  --color-dark-600: #3B3C4A;
+  --color-dark-500: #696A75;
+  --color-dark-400: #97989F;
+  --color-dark-100: #E8E8EA;
+
+  --color-success: var(--color-primary);
+  --color-warning: var(--color-primary);
+  --color-error: var(--color-primary);
+
+
+  /*
+   * Font Sizes
+   */
+  --size-xxxl: clamp(1.5rem, 1.2rem + 2vw, 2.25rem);
+  --size-xxl: clamp(1.25rem, 1.05rem + 1.8vw, 1.875rem);
+  --size-xl: clamp(1.125rem, 1rem + 1.5vw, 1.5rem);
+  --size-lg: clamp(1rem, 0.95rem + 1vw, 1.25rem);
+  --size-md: clamp(0.9375rem, 0.875rem + 0.8vw, 1.125rem);
+  --size-sm: clamp(0.875rem, 0.8125rem + 0.6vw, 1rem);
+  --size-xs: clamp(0.8125rem, 0.75rem + 0.4vw, 0.875rem);
+
+
+  /*
+   * Font Families
+   */
+  --font-primary: var(--font-work-sans);
+  --font-secondary: var(--font-source-serif-4);
+
+
+  /*
+   * Line Heights
+   */
+  --leading-flat: 1;       /* very compact */
+  --leading-normal: 1.2;   /* default comfortable reading */
+  --leading-relaxed: 1.5;  /* more open, good for body text */
+
+
+  /*
+   * Containers Width
+   */
+  --container-sm: 800px;    /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
+  --container-md: 1216px;   /* The most common container width */
+  --container-lg: 1216px;   /* Can be used for wider Header or Footer */
+
+
+  /*
+   * Border Radius
+   */ 
+  --radius-sm: 6px; 
+  --radius-md: 12px; 
+  --radius-round: 50%; 
+  --radius-full: 99999px; 
+
+
+  /*
+   * Transitions
+   */
+  --transition-base: all 0.3s ease;
+
+
+  /*
+   * Borders
+   */
+  --stroke-base: 1px solid var(--color-dark-100);
+  --stroke-transparent: 1px solid transparent;
+
+
+  /*
+   * Shadows
+   */
+  --shadow-base: 0px 12px 24px 6px rgba(17, 24, 39, 0.12);
+
+}

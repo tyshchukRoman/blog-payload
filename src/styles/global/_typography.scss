@@ -1,0 +1,77 @@
+/*
+ * Typography
+ */
+
+@mixin heading {
+  line-height: var(--leading-normal);
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  @include heading;
+}
+
+h1, .h1 {
+  font-size: var(--size-xxxl);
+}
+
+h2, .h2 {
+  font-size: var(--size-xxl);
+}
+
+h3, .h3 {
+  font-size: var(--size-xl);
+}
+
+h4, .h4 {
+  font-size: var(--size-lg);
+}
+
+h5, .h5 {
+  font-size: var(--size-md);
+}
+
+h6, .h6 {
+  font-size: var(--size-sm);
+}
+
+ul, ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+small {
+  font-size: var(--size-xs);
+}
+
+a {
+  text-decoration: none;
+	color: inherit;
+}
+
+ul:has([class]) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul:not([class]) {
+  padding-inline-start: 1.7ch;
+  list-style-type: disc;
+}
+
+ul:not([class]) > li {
+  padding-inline-start: 0.5rem;
+}
+
+ul ::marker {
+  font-size: 0.8lh;
+}
+
+ol ::marker {
+  font-size: 1em;
+  font-weight: var(--font-bold);
+}

@@ -1,0 +1,45 @@
+.post {
+  padding: 1rem;
+  border: var(--stroke-base);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  &__image-wrapper {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    display: block;
+    position: relative;
+    min-height: 240px;
+  }
+
+  &__image {
+    transition: var(--transition-base);
+    object-fit: cover;
+  }
+
+  &__image:hover {
+    transform: scale(1.1);
+  }
+
+  &__content {
+    height: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__categories {
+    --gap: 0.5rem;
+  }
+
+  &__meta-info {
+    margin-top: auto;
+  }
+}

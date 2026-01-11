@@ -1,0 +1,20 @@
+.post-meta {
+  color: var(--color-dark-400);
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1.25rem;
+
+  &__avatar {
+    border-radius: var(--radius-round);
+  }
+
+  &__author {
+    column-gap: 0.75rem;
+  }
+
+  &__author-name {
+    font-weight: 500;
+  }
+}

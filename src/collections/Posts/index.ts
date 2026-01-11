@@ -15,7 +15,7 @@ import { Banner } from '../../blocks/Banner/config'
 import { Code } from '../../blocks/Code/config'
 import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
-import { populateAuthors } from './hooks/populateAuthors'
+import { populateAuthor } from './hooks/populateAuthor'
 import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
 
 import {
@@ -41,11 +41,14 @@ export const Posts: CollectionConfig<'posts'> = {
   defaultPopulate: {
     title: true,
     slug: true,
+    heroImage: true,
     categories: true,
+    populatedAuthor: true,
     meta: {
       image: true,
       description: true,
     },
+    publishedAt: true
   },
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
@@ -182,20 +185,19 @@ export const Posts: CollectionConfig<'posts'> = {
       },
     },
     {
-      name: 'authors',
+      name: 'author',
       type: 'relationship',
       admin: {
         position: 'sidebar',
       },
-      hasMany: true,
       relationTo: 'users',
     },
-    // This field is only used to populate the user data via the `populateAuthors` hook
+    // This field is only used to populate the user data via the `populateAuthor` hook
     // This is because the `user` collection has access control locked to protect user privacy
     // GraphQL will also not return mutated user data that differs from the underlying schema
     {
-      name: 'populatedAuthors',
-      type: 'array',
+      name: 'populatedAuthor',
+      type: 'group',
       access: {
         update: () => false,
       },
@@ -218,7 +220,7 @@ export const Posts: CollectionConfig<'posts'> = {
   ],
   hooks: {
     afterChange: [revalidatePost],
-    afterRead: [populateAuthors],
+    afterRead: [populateAuthor],
     afterDelete: [revalidateDelete],
   },
   versions: {

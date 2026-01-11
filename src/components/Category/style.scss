@@ -1,0 +1,23 @@
+.category {
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  line-height: var(--leading-relaxed);
+  transition: var(--transition-base);
+
+  &.primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    padding: 6px 12px;
+  }
+
+  &.secondary {
+    color: var(--color-primary);
+    background-color: rgba(75, 107, 251, 0.05);
+    padding: 4px 10px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    filter: brightness(110%);
+  }
+}

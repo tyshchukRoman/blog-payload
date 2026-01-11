@@ -16,7 +16,7 @@ export const hero: Field = {
     {
       name: 'type',
       type: 'select',
-      defaultValue: 'lowImpact',
+      defaultValue: 'none',
       label: 'Type',
       options: [
         {
@@ -24,47 +24,19 @@ export const hero: Field = {
           value: 'none',
         },
         {
-          label: 'High Impact',
-          value: 'highImpact',
-        },
-        {
-          label: 'Medium Impact',
-          value: 'mediumImpact',
-        },
-        {
-          label: 'Low Impact',
-          value: 'lowImpact',
+          label: 'Home Hero',
+          value: 'homeHero',
         },
       ],
       required: true,
     },
     {
-      name: 'richText',
-      type: 'richText',
-      editor: lexicalEditor({
-        features: ({ rootFeatures }) => {
-          return [
-            ...rootFeatures,
-            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-            FixedToolbarFeature(),
-            InlineToolbarFeature(),
-          ]
-        },
-      }),
-      label: false,
-    },
-    linkGroup({
-      overrides: {
-        maxRows: 2,
-      },
-    }),
-    {
-      name: 'media',
-      type: 'upload',
+      name: 'featuredPost',
+      type: 'relationship',
       admin: {
-        condition: (_, { type } = {}) => ['highImpact', 'mediumImpact'].includes(type),
+        condition: (_, { type } = {}) => ['homeHero'].includes(type),
       },
-      relationTo: 'media',
+      relationTo: 'posts',
       required: true,
     },
   ],

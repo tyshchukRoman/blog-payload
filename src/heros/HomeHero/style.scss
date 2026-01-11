@@ -1,0 +1,66 @@
+@use "@/styles/global/breakpoints" as *;
+
+.home-hero {
+  margin-top: 1.5rem;
+
+  &__link {
+    display: block;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  &__inner {
+    width: 100%;
+    min-height: 20rem;
+    aspect-ratio: 2 / 1;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__image-wrapper {
+    margin-bottom: 4rem;
+    position: absolute;
+    inset: 0;
+  }
+
+  &__image {
+    object-fit: cover;
+    border-radius: var(--radius-md);
+  }
+
+  &__card {
+    margin: 0 4rem;
+    position: relative;
+    padding: 2.5rem;
+    max-width: 600px;
+    background-color: var(--color-light);
+    box-shadow: var(--shadow-base);
+    border-radius: var(--radius-md);
+  }
+
+  &__meta-info {
+    margin-top: 1.5rem;
+  }
+
+  @include md {
+    &__inner {
+      aspect-ratio: auto;
+    }
+
+    &__image-wrapper {
+      aspect-ratio: 3 / 2;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    &__card {
+      margin: 0;
+      padding: 2rem;
+    }
+  }
+}
